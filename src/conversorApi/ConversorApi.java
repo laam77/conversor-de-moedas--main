@@ -2,7 +2,6 @@ package conversorApi;
 
 import com.google.gson.Gson;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -11,22 +10,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConversorApi {
-        private String base_code;
-        private String target_code;
+        private String baseCode;
+        private String targetCode;
         private String conversion_rate;
         private double amount;
-        private String apiKey;
-        List<Conversor> listConversor = new ArrayList<>();
+        private String apiKey = "62de4c45fa84903a0465b9dd";
+        List<Conversor> conversorList = new ArrayList<>();
 
         public ConversorApi(Conversor conversor){
-            this.base_code = conversor.getBase_code();
-            this.target_code = conversor.getTarget_code();
+            this.baseCode = conversor.getBaseCode();
+            this.targetCode = conversor.getTargetCode();
             this.amount = conversor.getValor();
         }
 
         public String chamadaApi() throws RuntimeException {
-            this.apiKey = "62de4c";
-            String uriConsulta = this.apiKey + "/pair/" + this.base_code + "/" + this.target_code + "/" + this.amount;
+            this.apiKey = apiKey;
+            String uriConsulta = this.apiKey + "/pair/" + this.baseCode + "/" + this.targetCode + "/" + this.amount;
 
             URI uri = URI.create("https://v6.exchangerate-api.com/v6/" + uriConsulta);
 
@@ -42,7 +41,7 @@ public class ConversorApi {
 
                 Gson gson = new Gson();
                 Conversor conversor = gson.fromJson(json, Conversor.class);
-                listConversor.add(conversor);
+                conversorList.add(conversor);
                 return conversor.toString();
 
             } catch (Exception e) {
@@ -52,8 +51,8 @@ public class ConversorApi {
 
         }
 
-        public List<Conversor> getListConversor(){
-            return listConversor;
+        public List<Conversor> getConversorList(){
+            return conversorList;
         }
 
 }

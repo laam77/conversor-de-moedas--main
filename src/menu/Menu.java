@@ -6,52 +6,53 @@ import conversorApi.ConversorApi;
 import java.util.Scanner;
 
 public class Menu {
-    Scanner escolha = new Scanner(System.in);
+    Scanner numeroEscolha = new Scanner(System.in);
 
     public void menu(){
         boolean exibeMenu = true;
         while (exibeMenu){
             System.out.println("""
-                -----------------------------------------------------
-                Bem vindo ao Conversor de Moeda !
-                ------------------------------------------------------
+                ==============================================
+                ##### Bem-vindo ao Conversor de Moedas! #####
+                ==============================================
 
-                        1) [USD] para [BRL]
-                        2) [EUR] para [BRL]
-                        3) [ARS] para [BRL]
-                        4) [BRL] para [USD]
-                        5) [BRL] para [EUR]
-                        6) [BRL] para [ARS]
-                        7) Sair
-                -------------------------------------------------------
+                        1) Real  ==> Dólar
+                        2) Dólar ==> Real
+                        3) Real  ==> Euro
+                        4) Euro  ==> Real
+                        5) Real  ==> Peso Argentino
+                        6) Peso Argentino ==> Real
+                        7) Sair =>
+
+                ==============================================
                 """);
 
-                System.out.println("Escolha uma opção de conversão:");
-                String opcao = escolha.next();
+                System.out.println("Digite o número da opção de conversão desejada: ");
+                String opcao = numeroEscolha.next();
 
                 switch (opcao){
                     case "1":
-                        this.converter("USD","BRL");
+                        this.converter("BRL","USD");
                         break;
 
                     case "2":
-                        this.converter("EUR","BRL");
+                        this.converter("USD","BRL");
                         break;
 
                     case "3":
-                        this.converter("ARS","BRL");
-                        break;
-
-                    case "4":
-                        this.converter("BRL","USD" );
-                        break;
-
-                    case "5":
                         this.converter("BRL","EUR");
                         break;
 
+                    case "4":
+                        this.converter("EUR","BRL" );
+                        break;
+
+                    case "5":
+                        this.converter("BRL","ARS");
+                        break;
+
                     case "6":
-                        this.converter("BRL","ARS" );
+                        this.converter("ARS","BRL" );
                         break;
 
                     default:
@@ -67,11 +68,11 @@ public class Menu {
             }
         }
 
-        public void converter (String base_code, String target_code){
+        public void converter (String baseCode, String targetCode){
             System.out.println("Informe um valor para conversão: ");
             try {
-                double valor = this.escolha.nextDouble();
-                Conversor conversor = new Conversor(base_code, target_code, valor);
+                double valor = this.numeroEscolha.nextDouble();
+                Conversor conversor = new Conversor(baseCode, targetCode, valor);
                 ConversorApi api = new ConversorApi(conversor);
                 System.out.println(api.chamadaApi());
             } catch (Exception e) {

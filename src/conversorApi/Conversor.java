@@ -1,28 +1,24 @@
 package conversorApi;
 
 public class Conversor {
-    private String base_code;
-    private String target_code;
-    private  double conversion_result;
-    private double conversion_rate;
+    private String baseCode;
+    private String targetCode;
+    private  double conversionResult;
+    private double conversionRate;
     private double valor;
 
-    public Conversor(String base_code, String target_code, double valor){
-        this.base_code = base_code;
-        this.target_code = target_code;
+    public Conversor(String baseCode, String targetCode, double valor){
+        this.baseCode = baseCode;
+        this.targetCode = targetCode;
         this.valor = valor;
     }
 
-    public String getBase_code() {
-        return base_code;
+    public String getBaseCode() {
+        return baseCode;
     }
 
-    public String getTarget_code() {
-        return target_code;
-    }
-
-    public double getConversion_result() {
-        return conversion_result;
+    public String getTargetCode() {
+        return targetCode;
     }
 
     public double getValor() {
@@ -35,11 +31,11 @@ public class Conversor {
 
     @Override
     public String toString() {
-        return "Conversor{" +
-                "base_code='" + base_code + '\'' +
-                ", target_code='" + target_code + '\'' +
-                ", conversion_result=" + conversion_result +
-                ", conversion_rate=" + conversion_rate +
+        return "Conversor {" +
+                "baseCode = '" + baseCode + '\'' +
+                ", targetCode = '" + targetCode + '\'' +
+                ", conversionResult = " + conversionResult +
+                ", conversionRate = " + conversionRate +
                 '}';
     }
 }
