@@ -4,10 +4,14 @@
   com a finalidade de oferecer conversão de moedas.
 
 ## Funcionamento:
-  Consumo de API (ExchangeRate-API)...
-  Análise e Desserialização da Resposta JSON...
-  Filtragem de Moedas...
-  Exibição de Resultados em tempo real..
+  Consumo de API (ExchangeRate-API)
+  
+  Análise e Desserialização da Resposta JSON
+  
+  Filtragem de Moedas
+  
+  Exibição de Resultados em tempo real
+  
 
 ## Tecnologias
   Linguagem de programação Java.
