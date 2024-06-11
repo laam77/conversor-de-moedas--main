@@ -1,14 +1,18 @@
-Desafio Conversor de Moedas
-Neste desafio de programação, será feito requisições a uma API de taxas de câmbio.
+## Conversor de Moedas
+  Deafio Alura Challenge
+  Programa via console (Terminal) com menu de opcoẽs para interação com o usuario,
+  com a finalidade de oferecer conversão de moedas.
 
-Objetivo
-Consumo da API.
-Análise da Resposta JSON.
-Filtro de Moedas.
-Exibição de Resultados aos Usuários.
+# Funcionamento:
+  Consumo de API (ExchangeRate-API).
+  Análise e Desserialização da Resposta JSON.
+  Filtragem de Moedas.
+  Exibição de Resultados em tempo real.
 
-Tecnologias
-Java: Linguagem de programação utilizada durante o projeto.
-Gson: Biblioteca para converter objeto Java em JSON.
-Exchange Rate API: Oferece uma API, com taxas de câmbio em tempo real, confira em Exchange Rate API.
-# conversor-de-moedas--main
+# Tecnologias
+  Linguagem de programação Java.
+  Biblioteca Google Gson para converter objeto Java em JSON.
+  ExchangeRate-API: API, com taxas de câmbio em tempo real.
+  
+# Autor
+  Luis Morillo
